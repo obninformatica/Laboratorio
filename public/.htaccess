@@ -1,0 +1,16 @@
+options -indexes
+RewriteEngine on
+
+# Habilitar o PHP 5.5
+AddHandler applications/x-httpd-php55 .php
+
+<IfModule mod_security.c>
+	SecFilterEngine off
+	SecFilterScanPost off
+</IfModule>
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?p=$1 [QSA]
+
