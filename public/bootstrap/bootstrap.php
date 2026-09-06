@@ -6,8 +6,25 @@
  * Time: 19:32
  */
 
-$controller = new App\Controllers\Controller;
-$object = $controller->controller();
+/**
+ * chamando o controller digitado na URL
+ * http://localhost/controller
+*/
+$callController = new App\Controllers\Controller;
+$calledController = $callController->controller();
+//dump($calledController);
+$controller = new $calledController();
 
-$method = new App\Controllers\Method();
-dump($method->method($object));
+/**
+ * Chamando o metodo digitado na URL
+ * http://localhost/controller/metodo
+*/
+$callMethod = new App\Controllers\Method();
+$method = $callMethod->method($controller);
+
+/**
+ * Chamando o controller através da classe controller e da classe method
+ */
+$controller->$method();
+
+
