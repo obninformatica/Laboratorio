@@ -19,12 +19,12 @@ class Parameters
         $this->uri = $uri->getUri();
     }
 
-    public function explodeParameters()
+    private function explodeParameters()
     {
         $explodeUri = explode('/', $this->uri);
         $this->parameter = array_filter($explodeUri);
         //return $this->parameter;
-        dump($this->parameter);
+        //dump($this->parameter);
     }
 
     public function getParameterMethod($object,$method)
@@ -34,11 +34,13 @@ class Parameters
         {
             $this->explodeParameters();
 
-            if(method == 'index')
+            if($method == 'index')
             {
-                return isset($this->parameter[2]) ? $this->parameter[2] : null;
+                unset($this->parameter[1]);
+                return isset($this->parameter[2]) ? array_values($this->parameter) : null;
             }
-            return isset($this->parameter[3]) ? $this->parameter[3] : null;
+            unset($this->parameter[1],$this->parameter[2]);
+            return isset($this->parameter[3]) ? array_values($this->parameter) : null;
         }
 
     }
