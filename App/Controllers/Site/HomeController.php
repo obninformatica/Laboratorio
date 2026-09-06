@@ -14,7 +14,15 @@ class HomeController extends BaseController
 {
     public function index()
     {
-        $this->twig;
+        $dados =
+            [
+                'titulo' => 'Curso PHPOO | Loja Virtual',
+                'produtos' => 'Produtos Aqui',
+                'produtosPromocao' => 'Produtos em Promoção'
+            ];
+
+        $template = $this->twig->load('site_home.html');
+        $template->display($dados);
     }
 
 }
