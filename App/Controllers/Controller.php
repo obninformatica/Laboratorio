@@ -9,12 +9,11 @@ class Controller
 	const FOLDERS_CONTROLLER = ['Site','Admin'];
 	const ERROR_CONTROLLER = '\\App\\Controllers\\Erro\\ErroController';
 
-	private $controller;
 	private $uri;
 
 	public function __construct()
 	{
-		$this->uri = new Uri;
+		$this->uri = new Uri();
 	}
 
 	private function getController()
@@ -24,7 +23,9 @@ class Controller
 			$explodeUri = array_filter(explode('/', $this->uri->getUri()));
 			return ucfirst($explodeUri[1]).'Controller';
 		}
+        return ucfirst(DEFAULT_CONTROLLER).'Controller';
 	}
+
 
 	public function controller()
 	{
@@ -37,8 +38,6 @@ class Controller
 				return self::NAMESPACE_CONTROLLER.$folderController.'\\'.$controller;
 			}
 		}
-		//return self::ERROR_CONTROLLER;
-        dump(self::ERROR_CONTROLLER);
+		return self::ERROR_CONTROLLER;
 	}
-
 }
