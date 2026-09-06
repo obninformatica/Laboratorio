@@ -1,12 +1,12 @@
 # Laboratório de Engenharia em Eletrônica
-## Desenvolvimentos e estudos acadêmicos
+## Desenvolvimento e estudos acadêmicos
 -----------------------------
 
 Sistema para trabalhos e estudos em sistemas
 que usam a eletrônica como base. Processo usado
 tem base científica.
 
-- "Engenharia, o uso intencional da ciência"
+### "Engenharia, o uso intencional da ciência"
 
 -----------------------------
 Árvore de diretórios que compõe a estrutura
@@ -35,7 +35,7 @@ Aplicativo PHP/PDO procedimento estilo MVC (Models / Viewers / Controllers)
 	- assets
 		- css
 		- js
-		- imagens
+		- images
 	- bootstrap
 - Vendor
 	- Var-dumper
