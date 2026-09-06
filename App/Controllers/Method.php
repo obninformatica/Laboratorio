@@ -7,7 +7,7 @@
  */
 namespace App\Controllers;
 
-use App\Classes\Uri;
+use App\Classes\Uri; // usar esta classe para get uri
 
 class Method
 {

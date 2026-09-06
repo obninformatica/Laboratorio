@@ -13,12 +13,12 @@ class ProdutoController
 
     public function index()
     {
-        dump('index');
+        dump('index'); // básico para testes
     }
 
     public function calca()
     {
-        dump('calca');
+        dump('calca'); // básico para testes
     }
 
 }

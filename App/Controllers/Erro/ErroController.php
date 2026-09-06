@@ -12,6 +12,7 @@ class ErroController
 {
     public function index()
     {
+        // Chamada básica para erros
         dump('Erro');
     }
 

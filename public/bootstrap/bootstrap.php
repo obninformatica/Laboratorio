@@ -7,7 +7,7 @@
  */
 
 /**
- * chamando o controller digitado na URL
+ * chamando o controller digitado na URL (URI)
  * http://localhost/controller
 */
 $callController = new App\Controllers\Controller;
@@ -16,7 +16,7 @@ $calledController = $callController->controller();
 $controller = new $calledController();
 
 /**
- * Chamando o metodo digitado na URL
+ * Chamando o metodo digitado na URL (URI)
  * http://localhost/controller/metodo
 */
 $callMethod = new App\Controllers\Method();
